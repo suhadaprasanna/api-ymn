@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello WebSocket</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link href="./main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/0.3.4/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+    <script src="./app.js"></script>
+</head>
+
+<body>
+    <div id="main-content" class="container">
+        <div class="row">
+            <div class="col-md-12 space-bottom10">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="from">Name?</label>
+                        <input type="text" id="from" class="form-control" placeholder="enter your name...">
+                    </div>
+                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect</button>
+                </form>
+            </div>
+        </div>
+        <div class="row space-bottom10">
+            <form>
+                <div class="col-md-2">
+                    <select name="topic" id="topic" class="form-control">
+                        <option>Lifestyle</option>
+                        <option>Travel</option>
+                        <option>Career</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" id="text" class="form-control" placeholder="enter message ...">
+                </div>
+                <div class="col-md-4">
+                    <button id="send" class="btn btn-default" type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="conversation" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th width="10%">From</th>
+                            <th width="15%">Topic</th>
+                            <th width="60%">Message</th>
+                            <th width="10%">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="messages">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

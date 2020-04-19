@@ -1,0 +1,11 @@
+spring:
+    application:
+        name: api-ymn
+    profiles:
+        active : dev
+    cloud:
+      config:
+        enabled: true
+        uri: http://localhost:8888/
+
+# spring.profiles.active : dev
